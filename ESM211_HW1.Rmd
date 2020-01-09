@@ -1,0 +1,47 @@
+---
+title: "ESM211_HW1"
+author: "Robert Saldivar"
+date: "January 9, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. The population could be patchily distruted for the following reasons
+  a.
+  b.
+  c.
+
+```{r, include = FALSE}
+#Loading the packages that will be needed to analyze the data.
+library(tidyverse) #Loading in the tidyverse package
+```
+
+2.
+```{r, message = FALSE}
+Swallenia <- read_csv("Swallenia.csv") #this reads in the data
+
+Swallenia_ttest <- t.test(Swallenia$count_2009, Swallenia$count_2010, conf.level = 0.95) #this conducts a t test at a 95% confidence interval to compare the abundance of Swallenia in 2009 to the abundance of Swallenia in 2010.
+
+Swallenia_ttest #Calls the results of the t test for viewing
+```
+
+
+
+3.
+```{r}
+#Running a paired t test
+
+Swallenia_Paired_Test <- t.test(Swallenia$count_2009, Swallenia$count_2010, conf.level = 0.95, paired= TRUE) #Running the analysis on the change in Swallenia as a paired t test
+
+Swallenia_Paired_Test #Calling the paired t test results to view
+
+
+```
+
+4.
+
+
+5.
