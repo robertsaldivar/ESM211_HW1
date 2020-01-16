@@ -185,19 +185,29 @@ summary {
 
 
 <ol style="list-style-type: decimal">
-<li>The population could be patchily distruted for the following reasons</li>
+<li>The population could be patchily distruted for the following reasons:</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
-<li></li>
+<li>The patches could be sites of a limiting resource that the species needs to survive. In this situation I would expect high density patches as all the individuals would gather around the limiting resource.</li>
 <li></li>
 <li></li>
 </ol>
 <ol start="2" style="list-style-type: decimal">
 <li></li>
 </ol>
-<pre class="r"><code>Swallenia &lt;- read_csv(&quot;Swallenia.csv&quot;) #this reads in the data
+<pre class="r"><code>Swallenia &lt;- read_csv(&quot;Swallenia.csv&quot;) #this reads in the swallenia data
+
+#Some initial data exploration
+swallenia_summary &lt;- Swallenia %&gt;%
+  summarize(
+    count_2009_mean &lt;- mean(count_2009),
+    count_2009_sd &lt;- sd(count_2009),
+    count_2010_mean &lt;- mean(count_2010),
+    count_2010_sd &lt;- sd(count_2010)
+  )
 
 Swallenia_ttest &lt;- t.test(Swallenia$count_2009, Swallenia$count_2010, conf.level = 0.95) #this conducts a t test at a 95% confidence interval to compare the abundance of Swallenia in 2009 to the abundance of Swallenia in 2010.
+
 
 Swallenia_ttest #Calls the results of the t test for viewing</code></pre>
 <pre><code>## 
@@ -211,6 +221,8 @@ Swallenia_ttest #Calls the results of the t test for viewing</code></pre>
 ## sample estimates:
 ## mean of x mean of y 
 ##  61.90909 101.36364</code></pre>
+<p>The confidence level was chosen to be 95% because that is the most commonly used confidence level used for significance.</p>
+<p>Based on the t-test analysis there is</p>
 <ol start="3" style="list-style-type: decimal">
 <li></li>
 </ol>
@@ -230,10 +242,12 @@ Swallenia_Paired_Test #Calling the paired t test results to view</code></pre>
 ## sample estimates:
 ## mean of the differences 
 ##               -39.45455</code></pre>
+<p>Based on the analysis of a paired t test there is</p>
 <ol start="4" style="list-style-type: decimal">
-<li></li>
+<li><p>The analysis that is more appropriate to use is</p></li>
 <li></li>
 </ol>
+<p><strong>Yellowstone Grizzly Bears</strong> 6.</p>
 
 
 
